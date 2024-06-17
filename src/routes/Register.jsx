@@ -1,7 +1,8 @@
 import { useContext } from "react";
-import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserProvider";
+
+import { useForm } from "react-hook-form";
 
 const Register = () => {
     const navegate = useNavigate();
@@ -15,14 +16,13 @@ const Register = () => {
         setError,
     } = useForm({
         defaultValues: {
-            email: "bluuweb1@test.com",
-            password: "123123",
-            repassword: "123123",
+            email: "",
+            password: "",
+            repassword: "",
         },
     });
 
     const onSubmit = async ({ email, password }) => {
-        console.log(email, password);
         try {
             await registerUser(email, password);
             console.log("Usuario creado");
@@ -77,7 +77,7 @@ const Register = () => {
                         validate: {
                             trim: (v) => {
                                 if (!v.trim()) {
-                                    return "No seas 🤡, escribe algo";
+                                    return "Porfavor escriba una contraseña";
                                 }
                                 return true;
                             },
