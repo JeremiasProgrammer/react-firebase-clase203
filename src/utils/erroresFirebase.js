@@ -1,5 +1,5 @@
-export const erroresFirebase = (error) => {
-    switch (error.code) {
+export const erroresFirebase = (code) => {
+    switch (code) {
         case "auth/email-already-in-use":
             return { code: "email", message: "Usuario ya registrado" };
 
