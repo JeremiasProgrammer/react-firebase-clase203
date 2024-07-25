@@ -37,13 +37,13 @@ const Login = () => {
             <Title text="Login" />
             <form onSubmit={handleSubmit(onSubmit)}>
                 <FormInput
+                    label="Ingresa tu correo"
                     type="email"
                     placeholder="Ingrese email"
                     {...register("email", {
                         required,
                         pattern: patternEmail,
                     })}
-                    label="Ingresa tu correo"
                     error={errors.email}
                 >
                     <FormError error={errors.email} />

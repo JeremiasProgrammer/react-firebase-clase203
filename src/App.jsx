@@ -1,4 +1,4 @@
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Home from "./routes/Home";
@@ -11,11 +11,6 @@ import RequireAuth from "./components/RequireAuth";
 import { UserContext } from "./context/UserProvider";
 
 const App = () => {
-    <Link
-        href="./output.css"
-        rel="stylesheet"
-    />;
-
     const { user } = useContext(UserContext);
 
     if (user === false) {
